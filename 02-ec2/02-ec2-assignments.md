@@ -209,11 +209,9 @@ Launch an EC2 instance that automatically installs and starts a web server using
 **Step 1: Create the User Data Script**
 ```bash
 #!/bin/bash
-# Update the system
-dnf update -y
 
-# Install Apache web server
-dnf install -y httpd
+yum install httpd -y
+
 
 # Start Apache and enable on boot
 systemctl start httpd
