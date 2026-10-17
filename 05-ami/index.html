@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ಕರುನಾಡ ವೈಭವ — Karnataka's Immortal Legends & Landmark Cinema</title>
+
+  <!-- Google Fonts: Cinzel Decorative, Cinzel, Noto Sans Kannada, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800;900&family=Noto+Sans+Kannada:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for regal icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-primary: #07070a;
+      --bg-surface: #100d17;
+      --bg-card: rgba(22, 16, 32, 0.78);
+      --bg-card-hover: rgba(36, 26, 52, 0.9);
+      
+      --gold-primary: #D4AF37;
+      --gold-light: #F7E5A9;
+      --gold-dark: #8C6A1A;
+      --gold-gradient: linear-gradient(135deg, #FBF0B9 0%, #D4AF37 50%, #9B7823 100%);
+      --gold-border: rgba(212, 175, 55, 0.35);
+      
+      --crimson-royal: #721324;
+      --crimson-glow: rgba(178, 34, 52, 0.4);
+      --purple-royal: #2a113b;
+      
+      --text-main: #f5f3ef;
+      --text-muted: #b8b1a3;
+      --font-serif: 'Cinzel', serif;
+      --font-display: 'Cinzel Decorative', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-kn: 'Noto Sans Kannada', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      min-height: 100vh;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(114, 19, 36, 0.32) 0%, transparent 60%),
+        radial-gradient(circle at 10% 30%, rgba(42, 17, 59, 0.45) 0%, transparent 50%),
+        radial-gradient(circle at 90% 70%, rgba(140, 106, 26, 0.22) 0%, transparent 55%);
+      background-attachment: fixed;
+    }
+
+    /* Ambient Canvas */
+    #ambientCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    /* Royal Borders & Filigree Accents */
+    .royal-border {
+      border: 1px solid var(--gold-border);
+      position: relative;
+    }
+    .royal-border::before, .royal-border::after {
+      content: '◆';
+      position: absolute;
+      color: var(--gold-primary);
+      font-size: 8px;
+    }
+    .royal-border::before { top: -5px; left: -4px; }
+    .royal-border::after { bottom: -5px; right: -4px; }
+
+    /* Top Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(10, 8, 15, 0.85);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .nav-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .emblem {
+      width: 44px;
+      height: 44px;
+      background: var(--gold-gradient);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+      border: 1px solid #fffae6;
+    }
+
+    .emblem i {
+      color: #12091c;
+      font-size: 20px;
+    }
+
+    .logo-text h1 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-text span {
+      font-family: var(--font-kn);
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+      display: block;
+      margin-top: -3px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-icon {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-light);
+      padding: 0.6rem 1.1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-icon:hover {
+      background: var(--gold-primary);
+      color: #0b0713;
+      box-shadow: 0 0 16px rgba(212, 175, 55, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .badge-count {
+      background: var(--crimson-royal);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    /* Hero Showcase */
+    .hero {
+      position: relative;
+      padding: 5.5rem 1.5rem 3.5rem;
+      text-align: center;
+      max-width: 1040px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .hero-kannada-chant {
+      font-family: var(--font-kn);
+      color: var(--gold-primary);
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+      display: inline-block;
+      padding: 0.4rem 1.8rem;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      background: rgba(22, 16, 32, 0.6);
+      border-radius: 40px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      line-height: 1.15;
+      font-weight: 900;
+      background: linear-gradient(180deg, #FFFFFF 15%, #F4D984 65%, #AA771C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 780px;
+      margin: 0 auto 2.2rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .hero-quote {
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 0.95rem;
+      opacity: 0.88;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 0.7rem 1.5rem;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    /* Search & Filter Toolbar */
+    .filter-panel {
+      position: sticky;
+      top: 76px;
+      z-index: 40;
+      backdrop-filter: blur(20px);
+      background: rgba(14, 11, 20, 0.9);
+      padding: 1.2rem 1.5rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .filter-wrapper {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .top-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Tab Switcher */
+    .tab-group {
+      display: flex;
+      background: rgba(8, 6, 12, 0.7);
+      padding: 4px;
+      border-radius: 9999px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    .tab-btn {
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 9999px;
+      font-family: var(--font-serif);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: var(--gold-gradient);
+      color: #0b0713;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+    }
+
+    /* Search Input */
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 380px;
+      min-width: 250px;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold-dark);
+      font-size: 0.95rem;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(22, 16, 32, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 0.65rem 1rem 0.65rem 2.6rem;
+      border-radius: 9999px;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+    }
+
+    /* Category Pill Selectors */
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .category-pill {
+      background: rgba(22, 16, 32, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      color: var(--text-muted);
+      padding: 0.35rem 0.95rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .category-pill:hover, .category-pill.active {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border-color: var(--gold-primary);
+    }
+
+    /* Main Showcase Grid */
+    main {
+      max-width: 1380px;
+      margin: 2.5rem auto 5rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.8rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+      padding-bottom: 0.8rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.8rem;
+    }
+
+    /* Royal Card Styling */
+    .royal-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    .royal-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.22);
+      border-color: rgba(212, 175, 55, 0.55);
+    }
+
+    .card-banner {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #170d24 0%, #2f1228 50%, #150914 100%);
+    }
+
+    .card-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(16, 13, 23, 0.95) 100%);
+    }
+
+    .card-avatar-art {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-primary);
+      display: grid;
+      place-items: center;
+      background: rgba(14, 11, 20, 0.9);
+      box-shadow: 0 0 22px rgba(212, 175, 55, 0.3);
+      z-index: 1;
+      transition: transform 0.5s ease;
+    }
+
+    .royal-card:hover .card-avatar-art {
+      transform: scale(1.08) rotate(4deg);
+    }
+
+    .card-avatar-art i {
+      font-size: 38px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-type-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      background: rgba(10, 8, 15, 0.85);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      padding: 0.3rem 0.75rem;
+      border-radius: 30px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .bookmark-card-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 2;
+      background: rgba(10, 8, 15, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .bookmark-card-btn:hover, .bookmark-card-btn.saved {
+      background: var(--gold-primary);
+      color: #0d0714;
+      border-color: #fff;
+    }
+
+    .card-content {
+      padding: 1.4rem 1.6rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold-primary);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .card-era {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+
+    .card-title-kn {
+      font-family: var(--font-kn);
+      color: var(--gold-light);
+      font-size: 0.95rem;
+      margin-bottom: 0.7rem;
+      opacity: 0.9;
+    }
+
+    .card-epithet {
+      display: inline-block;
+      background: rgba(114, 19, 36, 0.3);
+      border-left: 3px solid var(--crimson-royal);
+      padding: 0.25rem 0.65rem;
+      font-size: 0.8rem;
+      color: #ffd8df;
+      font-weight: 500;
+      margin-bottom: 0.85rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .card-desc {
+      color: #b9b3a5;
+      font-size: 0.87rem;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .card-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      background: rgba(10, 8, 15, 0.5);
+      border: 1px dashed rgba(212, 175, 55, 0.2);
+      border-radius: 8px;
+      padding: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-item {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .highlight-item i {
+      color: var(--gold-primary);
+      font-size: 0.7rem;
+    }
+
+    .highlight-item strong {
+      color: #ebe7de;
+    }
+
+    .btn-card-action {
+      margin-top: auto;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-card-action:hover {
+      background: var(--gold-gradient);
+      color: #0f0917;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 4, 10, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background: #120d1c;
+      border: 1px solid var(--gold-primary);
+      border-radius: 20px;
+      max-width: 820px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 55, 0.25);
+      position: relative;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-hero {
+      position: relative;
+      background: linear-gradient(135deg, #2b1123 0%, #15091b 60%, #0d0612 100%);
+      padding: 2.5rem 2rem 2rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(22, 16, 32, 0.8);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: 0.2s ease;
+      font-size: 1.1rem;
+    }
+
+    .modal-close:hover {
+      background: var(--gold-primary);
+      color: #000;
+    }
+
+    .modal-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold-border);
+      color: var(--gold-light);
+      padding: 0.25rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .modal-title-kn {
+      font-family: var(--font-kn);
+      font-size: 1.25rem;
+      color: var(--gold-primary);
+      margin-top: 4px;
+    }
+
+    .modal-epithet {
+      color: #d1b88e;
+      font-size: 1rem;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    .modal-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .modal-section-title {
+      font-family: var(--font-serif);
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-quote-box {
+      background: rgba(114, 19, 36, 0.25);
+      border-left: 4px solid var(--gold-primary);
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 10px 10px 0;
+      font-style: italic;
+      color: #f7e6c4;
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .modal-quote-box strong {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-size: 0.85rem;
+      color: var(--gold-primary);
+      letter-spacing: 0.5px;
+    }
+
+    .modal-grid-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .info-card {
+      background: rgba(22, 16, 32, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .info-card-label {
+      font-size: 0.75rem;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .info-card-value {
+      font-size: 0.95rem;
+      color: #f2eee6;
+      font-weight: 500;
+    }
+
+    .works-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .work-tag {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      color: var(--gold-light);
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+    }
+
+    /* Bookmarks Drawer */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 90;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 420px;
+      height: 100vh;
+      background: #110d1a;
+      border-left: 1px solid var(--gold-primary);
+      z-index: 95;
+      box-shadow: -15px 0 40px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .drawer.active {
+      right: 0;
+    }
+
+    .drawer-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .drawer-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--gold-light);
+    }
+
+    .drawer-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .drawer-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(22, 16, 32, 0.8);
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .drawer-item h4 {
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .drawer-item span {
+      font-size: 0.75rem;
+      color: var(--gold-primary);
+    }
+
+    .drawer-item-del {
+      background: transparent;
+      border: none;
+      color: #e55368;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 4px;
+    }
+
+    /* Empty States & Feedback */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      color: var(--text-muted);
+      grid-column: 1 / -1;
+    }
+
+    .empty-state i {
+      font-size: 3rem;
+      color: var(--gold-dark);
+      margin-bottom: 1rem;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--gold-primary);
+      color: #fff;
+      padding: 0.8rem 1.4rem;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      z-index: 110;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(7, 5, 11, 0.95);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-anthem {
+      font-family: var(--font-kn);
+      color: var(--gold-primary);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-credits {
+      font-size: 0.8rem;
+      color: #7d776d;
+    }
+
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09070e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #423214;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-primary);
+    }
+
+    @media (max-width: 768px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .filter-panel {
+        top: 65px;
+        padding: 1rem;
+      }
+      .top-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-box {
+        max-width: 100%;
+      }
+      .tab-group {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .tab-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.78rem;
+        flex: 1;
+        text-align: center;
+      }
+      .hero {
+        padding: 3.5rem 1rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Golden Sparkle Background Canvas -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="emblem">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="logo-text">
+          <h1>ಕರುನಾಡ ವೈಭವ</h1>
+          <span>KARNATAKA'S TIMELESS HERITAGE</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="openBookmarksBtn" title="Saved Collection">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>Treasury</span>
+          <span class="badge-count" id="bookmarkCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Poetic Tribute -->
+  <section class="hero">
+    <div class="hero-kannada-chant">
+      <i class="fa-solid fa-dharmachakra"></i> ಸಿರಿಗನ್ನಡಂ ಗೆಲ್ಗೆ, ಸಿರಿಗನ್ನಡಂ ಬಾಳ್ಗೆ <i class="fa-solid fa-dharmachakra"></i>
+    </div>
+    <h2 class="hero-title">Immortal Legends & Landmark Cinema</h2>
+    <p class="hero-subtitle">
+      A royal digital archive devoted to the eternal pioneers, spiritual leaders, cultural pillars, 
+      and monumental cinematic treasures that forever defined the conscience and grandeur of Karnataka.
+    </p>
+    <div class="hero-quote">
+      "ಎಲ್ಲಾದರೂ ಇರು, ಎಂತಾದರೂ ಇರು, ಎಂದೆಂದಿಗೂ ನೀ ಕನ್ನಡವಾಗಿರು" — ರಾಷ್ಟ್ರಕವಿ ಕುವೆಂಪು
+    </div>
+  </section>
+
+  <!-- Sticky Dynamic Filter & Search Bar -->
+  <section class="filter-panel">
+    <div class="filter-wrapper">
+      <div class="top-controls">
+        <!-- Main Filter Tabs -->
+        <div class="tab-group" role="tablist">
+          <button class="tab-btn active" data-tab="all">
+            <i class="fa-solid fa-gem"></i> All Treasures
+          </button>
+          <button class="tab-btn" data-tab="people">
+            <i class="fa-solid fa-user-astronaut"></i> Immortal Icons (10)
+          </button>
+          <button class="tab-btn" data-tab="movies">
+            <i class="fa-solid fa-film"></i> Landmark Cinema (10)
+          </button>
+        </div>
+
+        <!-- Search Input -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search legend, movie, dialogue, year...">
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-pills" id="categoryPills">
+        <button class="category-pill active" data-cat="all">All Disciplines</button>
+        <button class="category-pill" data-cat="Cultural & Spiritual Pioneer">Cultural & Spiritual Pioneers</button>
+        <button class="category-pill" data-cat="Freedom Fighter">Freedom Warriors</button>
+        <button class="category-pill" data-cat="Cinema Titan">Cinema Titans</button>
+        <button class="category-pill" data-cat="Golden Era Classic">Golden Era Classics</button>
+        <button class="category-pill" data-cat="Cult Masterpiece">Cult Masterpieces</button>
+        <button class="category-pill" data-cat="Global Phenomenon">Global Phenomena</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Card Grid -->
+  <main>
+    <div class="stats-bar">
+      <div>
+        Showing <strong id="visibleCount" style="color:var(--gold-primary);">0</strong> historical treasures
+      </div>
+      <div style="font-size: 0.8rem; opacity: 0.8;">
+        Chandanavana & Karnataka Heritage Archive
+      </div>
+    </div>
+
+    <div class="cards-grid" id="cardsContainer">
+      <!-- Injected dynamically via JavaScript -->
+    </div>
+  </main>
+
+  <!-- Heritage Details Modal -->
+  <div class="modal-overlay" id="detailsModal">
+    <div class="modal-card">
+      <div class="modal-hero">
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-header-badge" id="modalTypeBadge">
+          <i class="fa-solid fa-award"></i> <span>IMMORTAL ICON</span>
+        </div>
+        <h3 class="modal-title" id="modalTitle">Dr. Rajkumar</h3>
+        <div class="modal-title-kn" id="modalTitleKn">ಡಾ. ರಾಜಕುಮಾರ್</div>
+        <div class="modal-epithet" id="modalEpithet">ನಟ ಸಾರ್ವಭೌಮ • Cultural Emperor of Karnataka</div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Quote or Dialogue Callout -->
+        <div class="modal-quote-box" id="modalQuoteContainer">
+          <p id="modalQuote">"ಅಭಿಮಾನಿಗಳೇ ನನ್ನ ದೇವರು..."</p>
+          <strong id="modalQuoteAuthor">— DR. RAJKUMAR (ANNAVRU)</strong>
+        </div>
+
+        <!-- Metadata Grid -->
+        <div class="modal-grid-info">
+          <div class="info-card">
+            <div class="info-card-label">Era / Timeline</div>
+            <div class="info-card-value" id="modalTimeline">1929 – 2006</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Primary Discipline</div>
+            <div class="info-card-value" id="modalDiscipline">Cinema, Classical Music, Cultural Pillar</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">High Honor / Milestone</div>
+            <div class="info-card-value" id="modalHonors">Dadasaheb Phalke, Karnataka Ratna, Padma Bhushan</div>
+          </div>
+        </div>
+
+        <!-- Full Biographical & Cultural Impact -->
+        <div>
+          <div class="modal-section-title">
+            <i class="fa-solid fa-scroll"></i> Cultural & Historical Significance
+          </div>
+          <p style="color: #c7c0b2; font-size: 0.95rem; line-height: 1.8;" id="modalBiography">
+            Dr. Rajkumar remains the undisputed sovereign of Kannada cultural consciousness...
+          </p>
+        </div>
+
+        <!-- Notable Masterpieces / Works -->
+        <div>
+          <div class="modal-section-title">
+            <i class="fa-solid fa-feather-pointed"></i> Notable Works & Hallmark Contributions
+          </div>
+          <div class="works-tag-list" id="modalWorksList">
+            <!-- Tags injected via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bookmarks Treasury Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="bookmarksDrawer">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <i class="fa-solid fa-crown" style="color:var(--gold-primary); margin-right:8px;"></i>
+        Your Treasury
+      </div>
+      <button class="modal-close" style="position:static; width:34px; height:34px;" id="closeDrawerBtn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="drawer-body" id="drawerItemsList">
+      <!-- Items dynamically populated -->
+    </div>
+  </aside>
+
+  <!-- Interactive Feedback Toast -->
+  <div class="toast" id="toastNotification">
+    <i class="fa-solid fa-circle-check" style="color:var(--gold-primary);"></i>
+    <span id="toastMsg">Added to your personal treasury</span>
+  </div>
+
+  <!-- Royal Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-anthem">ಜಯ ಭಾರತ ಜನನಿಯ ತನುಜಾತೆ, ಜಯ ಹೇ ಕರ್ನಾಟಕ ಮಾತೆ!</div>
+      <p class="footer-tagline">
+        Dedicated to preserving the eternal memory of Karnataka's architects, philosophers, cinematic pioneers, and cultural torchbearers.
+      </p>
+      <div class="footer-credits">
+        Curated with regal reverence • Gandhada Gudi • Chandanavana Heritage Foundation
+      </div>
+    </div>
+  </footer>
+
+  <!-- Complete Application Data & Logic -->
+  <script>
+    // -------------------------------------------------------------
+    // Curated Heritage Dataset: 10 Immortal Legends & 10 Landmark Films
+    // -------------------------------------------------------------
+    const heritageItems = [
+      // === IMMORTAL ICONS ===
+      {
+        id: "legend-rajkumar",
+        type: "people",
+        category: "Cinema Titan",
+        name: "Dr. Rajkumar",
+        kannadaName: "ಡಾ. ರಾಜಕುಮಾರ್ (ಅಣ್ಣಾವ್ರು)",
+        epithet: "ನಟ ಸಾರ್ವಭೌಮ • Cultural Custodian of Kannada",
+        era: "1929 – 2006",
+        icon: "fa-crown",
+        summary: "The supreme cultural icon of Karnataka whose 200+ films and virtuous life unified the state and shaped the identity of millions of Kannadigas.",
+        honors: "Dadasaheb Phalke Award (1995), Karnataka Ratna (1992), Padma Bhushan",
+        discipline: "Actor, Classical Playback Singer, Cultural Icon",
+        quote: "ಅಭಿಮಾನಿಗಳೇ ನನ್ನ ದೇವರು (My fans are my living deities). A true artist belongs to the soil and the people.",
+        works: ["Bangarada Manushya", "Babruvahana", "Kasturi Nivasa", "Kaviratna Kalidasa", "Mayura", "Bhakta Prahlada"],
+        details: "Dr. Rajkumar is synonymous with Kannada identity. Beginning with 'Bedara Kannappa' in 1954, his immaculate Sanskritized diction, expressive eyes, and dedication created an unmatched benchmark in Indian cinema. He was equally renowned as an accomplished classical playback singer, winning a National Award for 'Naadamaya'. His leadership during the Gokak Chaluvali linguistic movement cemented his place as Karnataka's beloved patriarch (Annavru)."
+      },
+      {
+        id: "legend-visvesvaraya",
+        type: "people",
+        category: "Cultural & Spiritual Pioneer",
+        name: "Sir M. Visvesvaraya",
+        kannadaName: "ಸರ್ ಎಂ. ವಿಶ್ವೇಶ್ವರಯ್ಯ",
+        epithet: "Architect of Modern Karnataka & Engineering Visionary",
+        era: "1861 – 1962",
+        icon: "fa-compass-drafting",
+        summary: "Bharat Ratna statesman and engineer whose vision birthed Krishna Raja Sagara Dam, Bhadravati Iron Works, and the State Bank of Mysore.",
+        honors: "Bharat Ratna (1955), Knight Commander of the Indian Empire (KCIE)",
+        discipline: "Chief Engineer, Diwan of Mysore, Statesman, Scholar",
+        quote: "Remember, work is worship. Industrialize or Perish.",
+        works: ["Krishna Raja Sagara Dam (KRS)", "Mysore University founding", "State Bank of Mysore", "Visvesvaraya Iron and Steel Plant", "Automatic Floodgates System"],
+        details: "Sir Mokshagundam Visvesvaraya served as the 19th Diwan of Mysore. He engineered flood protection systems across Hyderabad, patented automatic water floodgates in Pune, and turned the Kingdom of Mysore into a model progressive state with institutions like Bangalore University, Mysore Iron Works, and Mysore Chambers of Commerce. His birthday (September 15) is celebrated as National Engineers' Day across India."
+      },
+      {
+        id: "legend-kuvempu",
+        type: "people",
+        category: "Cultural & Spiritual Pioneer",
+        name: "Rashtrakavi Kuvempu",
+        kannadaName: "ರಾಷ್ಟ್ರಕವಿ ಕುವೆಂಪು (ಕೆ.ವಿ. ಪುಟ್ಟಪ್ಪ)",
+        epithet: "Jnanpith Laureate & Universal Humanist (ವಿಶ್ವಮಾನವ)",
+        era: "1904 – 1994",
+        icon: "fa-feather",
+        summary: "Karnataka's first Jnanpith recipient, revered creator of the epic Sri Ramayana Darshanam and the state anthem 'Jaya Bharata Jananiya Tanujate'.",
+        honors: "Jnanpith Award (1967), Padma Vibhushan, Karnataka Ratna",
+        discipline: "Poet, Novelist, Playwright, Philosopher, Vice-Chancellor",
+        quote: "ಪ್ರತಿಯೊಬ್ಬ ಮಾನವನೂ ಹುಟ್ಟುವಾಗ ವಿಶ್ವಮಾನವ; ಬೆಳೆಯುತ್ತಾ ಅಲ್ಪಮಾನವನಾಗುತ್ತಾನೆ. ಪುನಃ ವಿಶ್ವಮಾನವನಾಗುವುದೇ ಸಾಧನೆ.",
+        works: ["Sri Ramayana Darshanam", "Kanooru Heggadithi", "Malegalalli Madumagalu", "State Anthem: Jaya Bharata Jananiya Tanujate"],
+        details: "Kuppali Venkatappa Puttappa revolutionized Kannada literature through his sublime nature poetry reflecting the Western Ghats (Malenadu) and his philosophy of 'Vishwa Manava' (Universal Man). As Vice-Chancellor of Mysore University, he championed education in the mother tongue and penned monumental novels that captured the sociological depth of rural Karnataka."
+      },
+      {
+        id: "legend-basaveshwara",
+        type: "people",
+        category: "Cultural & Spiritual Pioneer",
+        name: "Jagadguru Basaveshwara",
+        kannadaName: "ಜಗದ್ಗುರು ಬಸವೇಶ್ವರ (ಬಸವಣ್ಣ)",
+        epithet: "12th-century Philosopher & Father of Democratic Discourse",
+        era: "1105 – 1167 CE",
+        icon: "fa-hands-praying",
+        summary: "Revolutionary philosopher and statesman who founded the Anubhava Mantapa — arguably the world's earliest socio-democratic parliament.",
+        honors: "Pioneered Vachana Sahitya & Social Equality Movement",
+        discipline: "Philosopher, Prime Minister of Kalachuri Empire, Mystic Poet",
+        quote: "ಕಾಯಕವೇ ಕೈಲಾಸ (Work is Worship). ಇವನಾರವ ಇವನಾರವ ಎಂದೆನಿಸದಿರಯ್ಯ; ಇವ ನಮ್ಮವ ಇವ ನಮ್ಮವ ಎಂದೆನಿಸಯ್ಯ.",
+        works: ["Vachana Literature (Sharana Movement)", "Anubhava Mantapa", "Foundations of Lingayat Philosophy"],
+        details: "Basavanna discarded orthodox caste and gender barriers in medieval India. His Anubhava Mantapa gave men and women from all walks of life equal voice to debate theology, ethics, and social justice in simple, poetic Kannada vachanas. His principle of 'Kayaka' elevated daily physical labor to supreme spiritual worship."
+      },
+      {
+        id: "legend-chennamma-obavva",
+        type: "people",
+        category: "Freedom Fighter",
+        name: "Kittur Chennamma & Onake Obavva",
+        kannadaName: "ರಾಣಿ ಕಿತ್ತೂರು ಚೆನ್ನಮ್ಮ ಮತ್ತು ಒನಕೆ ಓಬವ್ವ",
+        epithet: "Immortal Valkyries of Kannada Soil & Resistance",
+        era: "18th & 19th Century",
+        icon: "fa-shield-halved",
+        summary: "The fearless Queen of Kittur who led armed resistance against the British East India Company, and Chitradurga's legendary pestle warrior Obavva.",
+        honors: "Folk Icons of Anti-Colonial Valor & Indomitable Courage",
+        discipline: "Military Leaders, Warriors, Folk Martyrs",
+        quote: "ನಿಮಗೇಕೆ ಕೊಡಬೇಕು ಕಪ್ಪ? ನಮ್ಮ ನೆಲದಲ್ಲಿ ಉತ್ತು ಬಿತ್ತು ಬೆಳೆದದ್ದಕ್ಕೆ ನಾವೇಕೆ ಕೊಡಬೇಕು ಕಪ್ಪ?",
+        works: ["1824 Kittur Armed Uprising", "Defense of Chitradurga Fort (Onake Kindi)"],
+        details: "Rani Chennamma was one of the earliest female rulers to wage war against British colonial hegemony, fiercely rejecting Lord Dalhousie's Doctrine of Lapse. In parallel, Onake Obavva's solitary defense of the Chitradurga Fort breach with a simple wooden pestle against Hyder Ali's troops remains one of the bravest folk legends of world military lore."
+      },
+      {
+        id: "legend-vishnuvardhan",
+        type: "people",
+        category: "Cinema Titan",
+        name: "Dr. Vishnuvardhan",
+        kannadaName: "ಡಾ. ವಿಷ್ಣುವರ್ಧನ್",
+        epithet: "ಸಾಹಸ ಸಿಂಹ • The Colossus of Intense Character Acting",
+        era: "1950 – 2009",
+        icon: "fa-bolt-lightning",
+        summary: "One of Indian cinema's most magnetic lead actors, renowned for his intense gaze, heroic charisma, and landmark multi-genre filmography.",
+        honors: "Karnataka State Lifetime Achievement Award, National Acclaim",
+        discipline: "Actor, Martial Artist, Philanthropist",
+        quote: "Life is a journey of continuous patience, inner courage, and unconditional compassion.",
+        works: ["Nagarahavu", "Aapthamitra", "Bandhana", "Muthina Haara", "Simhadriya Simha", "Yajamana"],
+        details: "Bursting onto the screen as the rebellious Ramachari in Puttanna Kanagal's classic 'Nagarahavu' (1972), Dr. Vishnuvardhan dominated Kannada cinema across four decades with 220 films. His dynamic range traversed fiery heroism in 'Sahasa Simha' to deep, tragic vulnerability in 'Bandhana' and psychodramatic brilliance in 'Aapthamitra'."
+      },
+      {
+        id: "legend-shankar-nag",
+        type: "people",
+        category: "Cinema Titan",
+        name: "Shankar Nag",
+        kannadaName: "ಶಂಕರ್ ನಾಗ್ (ಕರಾಟೆ ರಾಜ)",
+        epithet: "The Mercurial Visionary of Indian Television & Cinema",
+        era: "1954 – 1990",
+        icon: "fa-video",
+        summary: "A creative dynamo who immortalized R.K. Narayan's Malgudi Days on screen and championed futuristic civic projects like the Bangalore Metro.",
+        honors: "National Film Award, IFFI Silver Peacock, Karnataka State Honors",
+        discipline: "Director, Actor, Screenwriter, Theatre Pioneer, Visionary",
+        quote: "Time is running too fast; we must build institutions and tell stories that live for centuries.",
+        works: ["Malgudi Days (Director)", "Auto Raja", "Accident", "Nodi Swamy Navirodu Hige", "Ondanondu Kaladalli"],
+        details: "In his brief 35 years of life, Shankar Nag altered Indian visual storytelling forever. His cinematic masterwork 'Malgudi Days' is celebrated as Indian television's crowning artistic jewel. As an actor, he became the soul of the working-class hero ('Auto Raja'), while envisioning visionary infrastructure projects like Nandi Hills ropeways and an urban rapid transit network for Bangalore decades before its time."
+      },
+      {
+        id: "legend-puneeth",
+        type: "people",
+        category: "Cinema Titan",
+        name: "Puneeth Rajkumar",
+        kannadaName: "ಪುನೀತ್ ರಾಜಕುಮಾರ್ (ಅಪ್ಪು)",
+        epithet: "ಪವರ್ ಸ್ಟಾರ್ • Beloved Sovereign of Empathy & Benevolence",
+        era: "1975 – 2021",
+        icon: "fa-heart",
+        summary: "National award-winning child artist who grew into Kannada cinema's premier superstar and one of the state's most revered philanthropists.",
+        honors: "Karnataka Ratna (Posthumous, 2022), National Film Award (Best Child Artist)",
+        discipline: "Actor, Playback Singer, Producer, Philanthropist",
+        quote: "Living with kindness and quietly helping those who have no one is the only true religion.",
+        works: ["Bettada Hoovu", "Appu", "Raajakumara", "Gandhada Gudi (Docu-film)", "Yuvarathnaa", "Prithvi"],
+        details: "Winning a National Award at age ten for 'Bettada Hoovu', Puneeth later commanded Karnataka's box office with unmatched dancing athleticism and hits like 'Raajakumara'. Yet his greatest legacy was revealed after his untimely departure: secretly financing dozens of orphanages, elderly shelters, and thousands of girls' education through the Shakti Dhama foundation, followed by his celebration of nature in the docu-epic 'Gandhada Gudi'."
+      },
+      {
+        id: "legend-karanth-karnad",
+        type: "people",
+        category: "Cultural & Spiritual Pioneer",
+        name: "B.V. Karanth & Girish Karnad",
+        kannadaName: "ಬಿ.ವಿ. ಕಾರಂತ್ ಮತ್ತು ಗಿರೀಶ್ ಕಾರ್ನಾಡ್",
+        epithet: "The Doyen Architects of Kannada Modernist Theatre & Cinema",
+        era: "20th Century",
+        icon: "fa-masks-theater",
+        summary: "Pioneers who spearheaded India's parallel cinema and modern theatre movement, synthesizing regional folklore with world literature.",
+        honors: "Jnanpith Award (Karnad), Sangeet Natak Akademi Fellowships, Padma Honors",
+        discipline: "Playwrights, Film Directors, Theatre Maestros",
+        quote: "Theatre is an honest mirror of a civilization's deepest anxieties and poetic truths.",
+        works: ["Samskara", "Hayavadana", "Tughlaq", "Chomana Dudi (Karanth)", "Ondanondu Kaladalli"],
+        details: "B.V. Karanth (pioneering musical director of NSD) and Girish Karnad (Rhodes scholar & Jnanpith playwright) revolutionized modern Indian dramatic arts. Their seminal collaboration on the revolutionary film 'Samskara' (1970) ignited the Parallel Cinema revolution in India, winning the National Award and challenging age-old social orthodoxies."
+      },
+      {
+        id: "legend-puttanna-kanagal",
+        type: "people",
+        category: "Cinema Titan",
+        name: "S.R. Puttanna Kanagal",
+        kannadaName: "ಪುಟ್ಟಣ್ಣ ಕಣಗಾಲ್",
+        epithet: "ಚಿತ್ರಬ್ರಹ್ಮ • The Master Storyteller of Human Psyche",
+        era: "1933 – 1985",
+        icon: "fa-clapperboard",
+        summary: "Visionary filmmaker who turned Kannada cinema into an art of deep psychological realism, bold feminine narratives, and unforgettable visual poetry.",
+        honors: "Filmmaker of the Decade, 3 Filmfare Awards, 8 State Film Awards",
+        discipline: "Director, Screenwriter",
+        quote: "Cinema is not merely entertainment; it is the visual examination of suppressed human desires.",
+        works: ["Sharapanjara", "Nagarahavu", "Gejje Pooje", "Ranganayaki", "Belli Moda", "Edakallu Guddada Mele"],
+        details: "Puttanna Kanagal earned the title 'Chitra Brahma' (Creator of Cinema) by crafting complex, female-centric tragedies that explored mental health, societal taboos, and emotional nuances never before attempted in Indian cinema. He groomed an entire golden generation of stalwarts including Kalpana, Vishnuvardhan, and Ambareesh."
+      },
+
+      // === LANDMARK MOVIES ===
+      {
+        id: "movie-babruvahana",
+        type: "movies",
+        category: "Golden Era Classic",
+        name: "Babruvahana",
+        kannadaName: "ಬಬ್ರುವಾಹನ (1977)",
+        epithet: "The Zenith of Indian Mythological Grandeur & Dialogues",
+        era: "1977",
+        icon: "fa-horse-head",
+        summary: "Hunsur Krishnamurthy's mythological marvel featuring Dr. Rajkumar in a monumental dual role of Arjuna and his estranged warrior son Babruvahana.",
+        honors: "2 National Film Awards, 2 Karnataka State Film Awards",
+        discipline: "Mythological Drama • Directed by Hunsur Krishnamurthy",
+        quote: "ಯಾರೇ ಕೂಗಾಡಲಿ, ಊರೇ ಹಾರಾಡಲಿ... ನಾನೇ ಕಣೋ ಬಬ್ರುವಾಹನ! (The poetic Sanskritized Kannada duel between Arjuna and Babruvahana)",
+        works: ["Dual Role by Dr. Rajkumar", "Sanskritized Kannada Diction", "T.G. Lingappa Music", "Iconic Climax Battle"],
+        details: "Regarded as one of the finest mythological spectacles in world cinema. Dr. Rajkumar's portrayal of both the arrogant Pandava archer Arjuna and his equally fierce son Babruvahana features Sanskrit-infused dialogue deliveries that are rehearsed by drama students to this day. The film's musical duel and philosophical clash between father and son remain unmatched."
+      },
+      {
+        id: "movie-bangarada-manushya",
+        type: "movies",
+        category: "Golden Era Classic",
+        name: "Bangarada Manushya",
+        kannadaName: "ಬಂಗಾರದ ಮನುಷ್ಯ (1972)",
+        epithet: "The Societal Masterpiece that Sparked a Rural Renaissance",
+        era: "1972",
+        icon: "fa-wheat-awn",
+        summary: "Siddalingaiah's epic human drama that ran continuously for over two years in theaters and inspired thousands of educated youths to return to farming.",
+        honors: "Ran 104 weeks in Bangalore; Major Cultural Phenomenon",
+        discipline: "Social Drama • Directed by S. Siddalingaiah",
+        quote: "ಆಗದು ಎಂದು ಕೈ ಕಟ್ಟಿ ಕುಳಿತರೆ ಸಾಗದು ಕೆಲಸವು ಮುಂದೆ... ಮನಸೊಂದಿದ್ದರೆ ಮಾರ್ಗವು ಉಂಟು!",
+        works: ["Starring Dr. Rajkumar & Bharathi", "G.K. Venkatesh Music", "P.B. Sreenivas & P. Susheela Vocals"],
+        details: "Adapted from T.K. Rama Rao's novel, 'Bangarada Manushya' holds a legendary status in sociology as well as cinema. The protagonist Rajiv's selfless dedication to modernizing barren village lands transformed cinema into an instrument of social change, prompting educated urban Kannadigas in the 1970s to abandon desk jobs and undertake agricultural revolutions in their ancestral villages."
+      },
+      {
+        id: "movie-kasturi-nivasa",
+        type: "movies",
+        category: "Golden Era Classic",
+        name: "Kasturi Nivasa",
+        kannadaName: "ಕಸ್ತೂರಿ ನಿವಾಸ (1971)",
+        epithet: "The Aristocratic Tragedy of Boundless Nobility",
+        era: "1971",
+        icon: "fa-landmark-dome",
+        summary: "A sublime tragic masterpiece portraying the tragic rise and fall of a noble match-factory magnate who never learned how to say 'No' to giving.",
+        honors: "State Awards, Remade into Tamil (Sivaji Ganesan) and Hindi (Sanjeev Kumar)",
+        discipline: "Tragic Drama • Directed by Dorai-Bhagavan",
+        quote: "ಆಡಿಸಿ ನೋಡು, ಬೀಳಿಸಿ ನೋಡು, ಉರುಳಿ ಹೋಗದು... ಈ ಗೊಂಬೆ ಮುರಿದು ಬೀಳದು!",
+        works: ["Starring Dr. Rajkumar, Jayanthi, Aarathi", "Music by G.K. Venkatesh", "Restored in Color (2014)"],
+        details: "Directed by the legendary duo Dorai-Bhagavan, Kasturi Nivasa is considered one of Indian cinema's greatest tearjerkers. The imagery of the pure silver dove and the protagonist Ravi Varma's tragic commitment to selfless philanthropy showcased Rajkumar's mastery of underplayed emotional nobility. When colorized and re-released in 2014, it packed cinemas once again."
+      },
+      {
+        id: "movie-om",
+        type: "movies",
+        category: "Cult Masterpiece",
+        name: "Om (ಓಂ)",
+        kannadaName: "ಓಂ (1995)",
+        epithet: "The Raw Underworld Cult that Redefined Indian Gangster Lore",
+        era: "1995",
+        icon: "fa-skull",
+        summary: "Upendra's blistering psychological thriller starring Shivarajkumar, which made cinematic history by casting actual Bangalore real-life gangsters.",
+        honors: "Re-released over 550+ times in theaters; National Limca Record",
+        discipline: "Neo-noir Crime Drama • Directed by Upendra",
+        quote: "ಪ್ರೀತಿ ಮಾಡೋರು ಹೃದಯ ಕೊಡ್ತಾರೆ... ಆದ್ರೆ ನಾನು ಪ್ರಾಣ ಕೊಡ್ತೀನಿ! 'ಹೇ ದಿನಕರ...'",
+        works: ["Directed by Upendra", "Breakout Role for Shivarajkumar (Sathya)", "Music by Hamsalekha"],
+        details: "Before Ram Gopal Varma's 'Satya', Upendra crafted 'Om'—a film that sent shockwaves across Indian cinema. Blending intense philosophical dialogues on non-violence with visceral underworld realism, the film portrays the transformation of a peace-loving priest's son into crime lord Sathya. Its soundtrack, philosophical subtext, and raw visual style turned it into a cultural cult phenomenon with more re-releases than any Indian film in history."
+      },
+      {
+        id: "movie-malgudi-days",
+        type: "movies",
+        category: "Cult Masterpiece",
+        name: "Malgudi Days",
+        kannadaName: "ಮಾಲ್ಗುಡಿ ಡೇಸ್ (1986)",
+        epithet: "Timeless Childhood Nostalgia & Shankar Nag's Visual Wizardry",
+        era: "1986",
+        icon: "fa-train-subway",
+        summary: "The definitive cinematic adaptation of R.K. Narayan's fictional town, shot in pristine Agumbe by Shankar Nag with music by L. Vaidyanathan.",
+        honors: "Widely regarded as the greatest television adaptation in Indian history",
+        discipline: "Anthology Series/Films • Directed by Shankar Nag",
+        quote: "Tanana tananana... The unforgettable soulful hum that takes an entire nation back to innocent youth.",
+        works: ["Shot in Agumbe rainforests", "Featuring Master Manjunath as Swami", "Music by L. Vaidyanathan"],
+        details: "Shankar Nag transformed R.K. Narayan's literary stories into immortal moving pictures. Filmed in the misty rain forests of Agumbe (Shimoga), Malgudi Days featured Master Manjunath as Swami and a stellar ensemble of Kannada stage actors. The series captured the simplicity, humor, and tender vulnerabilities of mid-20th-century Indian life with unmatched poetic restraint."
+      },
+      {
+        id: "movie-mungaru-male",
+        type: "movies",
+        category: "Cult Masterpiece",
+        name: "Mungaru Male",
+        kannadaName: "ಮುಂಗಾರು ಮಳೆ (2006)",
+        epithet: "The Monsoon Romance that Shattered Box Office Records",
+        era: "2006",
+        icon: "fa-cloud-showers-heavy",
+        summary: "Yogaraj Bhat's monsoon-drenched romantic milestone that ran for an unprecedented 865 days, introducing Ganesh as the 'Golden Star'.",
+        honors: "First film in South India to gross ₹50+ Crores; 865 days theatrical run",
+        discipline: "Romantic Drama • Directed by Yogaraj Bhat",
+        quote: "ಅನಿಸುತಿದೆ ಯಾಕೋ ಇಂದು... ನೀನೇನೆ ನನ್ನವಳೆಂದು... ಪ್ರೀತಿಗೆ ಸಾವಿಲ್ಲ, ಆದರೆ ಪ್ರೀತಿಸೋರಿಗೆ ಮಾತ್ರ ಸಾವು!",
+        works: ["Starring Ganesh & Pooja Gandhi", "Music by Mano Murthy", "Cinematography by Krishna", "Poetry by Jayanth Kaikini"],
+        details: "Shot amidst the torrential monsoons of Jog Falls and Sakleshpur, Mungaru Male brought a generational shift to Kannada cinema. Its conversational philosophical dialogue, melancholic rain cinematography, Jayanth Kaikini's evocative lyrics, and heartbreaking ending captured youth across South India, creating an all-time box office milestone."
+      },
+      {
+        id: "movie-kgf",
+        type: "movies",
+        category: "Global Phenomenon",
+        name: "K.G.F: Chapter 1 & 2",
+        kannadaName: "ಕೆ.ಜಿ.ಎಫ್ (ಅಧ್ಯಾಯ ೧ & ೨)",
+        epithet: "The Pan-Indian Colossus that Stunned Global Box Offices",
+        era: "2018 – 2022",
+        icon: "fa-fire",
+        summary: "Prashanth Neel's thunderous high-octane period saga starring Yash as Rocky Bhai, establishing Kannada cinema on the international map.",
+        honors: "Grossed ₹1250+ Crores worldwide; Highest-grossing Kannada film series in history",
+        discipline: "Period Action Epic • Directed by Prashanth Neel",
+        quote: "Violence... Violence... Violence! I don't like it. I avoid. But... violence likes me! I can't avoid!",
+        works: ["Starring Rocking Star Yash", "Music by Ravi Basrur", "Cinematography by Bhuvan Gowda"],
+        details: "KGF revolutionized commercial cinema staging, non-linear editing, and scale across India. Charting Rocky's promise to his dying mother and his subsequent conquest of the Kolar Gold Fields, the franchise broke box office records across Hindi, Telugu, Tamil, and Malayalam markets, proving the boundless technical prowess and ambition of Chandanavana."
+      },
+      {
+        id: "movie-kantara",
+        type: "movies",
+        category: "Global Phenomenon",
+        name: "Kantara: A Legend",
+        kannadaName: "ಕಾಂತಾರ (2022)",
+        epithet: "The Divine Folklore & Bhoota Kola Spiritual Awakening",
+        era: "2022",
+        icon: "fa-masks-theater",
+        summary: "Rishab Shetty's visceral, spiritual celebration of Coastal Karnataka's Daiva Aradhane (Bhoota Kola) and indigenous land sovereignty.",
+        honors: "National Film Award for Best Popular Film; Massive Global Success",
+        discipline: "Folklore Mythological Action • Directed by Rishab Shetty",
+        quote: "ವಾವ್... ದೈವ ನರ್ತನದ ಆ ದೈವಿಕ ಘರ್ಜನೆ! Nature, humanity, and divinity in cosmic retribution.",
+        works: ["Directed and Starred by Rishab Shetty", "Varaha Roopam Anthem by Ajaneesh Loknath", "Exploration of Guliga & Panjurli Daivas"],
+        details: "Rooted deeply in the pristine soil of Tulunadu, Kantara combined folk traditions with pulse-pounding action. Rishab Shetty's transformative 20-minute climax embodying the fiery Guliga Daiva transfixed audiences worldwide, proving that hyper-local cultural specificity is the truest universal storytelling."
+      },
+      {
+        id: "movie-777-charlie",
+        type: "movies",
+        category: "Cult Masterpiece",
+        name: "777 Charlie",
+        kannadaName: "೭೭೭ ಚಾರ್ಲಿ (2022)",
+        epithet: "The Transcendent Tale of Redemption & Canine Devotion",
+        era: "2022",
+        icon: "fa-dog",
+        summary: "Kiranraj K's emotionally devastating adventure drama tracing the redemptive journey between a reclusive loner and a rescued Labrador.",
+        honors: "National Film Award for Best Feature Film in Kannada",
+        discipline: "Adventure Drama • Directed by Kiranraj K",
+        quote: "If you are lucky, a dog will come into your life, steal your heart, and change everything forever.",
+        works: ["Starring Rakshit Shetty & Charlie the Labrador", "Music by Nobin Paul", "Filmed across Kashmir & South India"],
+        details: "Heartfelt, impeccably crafted, and globally revered, 777 Charlie explored themes of mental isolation, animal adoption, and the pure unconditional love of a pet. Rakshit Shetty's nuanced performance paired with the extraordinary training of the canine actor Charlie earned tears and standing ovations across international film circuits."
+      },
+      {
+        id: "movie-samskara",
+        type: "movies",
+        category: "Golden Era Classic",
+        name: "Samskara",
+        kannadaName: "ಸಂಸ್ಕಾರ (1970)",
+        epithet: "The Revolutionary Dawn of Indian Parallel Cinema",
+        era: "1970",
+        icon: "fa-book-open",
+        summary: "Pattabhirama Reddy and U.R. Ananthamurthy's pioneering film that boldly challenged caste dogmas and launched parallel art cinema in South India.",
+        honors: "National Film Award for Best Feature Film (Golden Lotus - Swarna Kamal)",
+        discipline: "Parallel Realistic Cinema • Directed by Pattabhirama Reddy",
+        quote: "Death questions not merely rituals, but the very sanctity of living convictions.",
+        works: ["Based on U.R. Ananthamurthy's novel", "Screenplay by Girish Karnad", "Cinematography by Tom Cowan"],
+        details: "Samskara marked a tectonic turning point in Indian cinema. Initially banned by the censor board for its raw dissection of caste hypocrisy and existential moral dilemmas, it triumphed to win the National Best Film Award (Swarna Kamal) and placed Kannada cinema alongside international world cinema masters."
+      }
+    ];
+
+    // -------------------------------------------------------------
+    // Application State
+    // -------------------------------------------------------------
+    let currentTab = 'all';
+    let currentCategory = 'all';
+    let searchQuery = '';
+    let bookmarks = JSON.parse(localStorage.getItem('karunada_bookmarks') || '[]');
+
+    // DOM Elements
+    const cardsContainer = document.getElementById('cardsContainer');
+    const visibleCountEl = document.getElementById('visibleCount');
+    const searchInput = document.getElementById('searchInput');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const categoryButtons = document.querySelectorAll('.category-pill');
+    const bookmarkCountEl = document.getElementById('bookmarkCount');
+    
+    // Modal Elements
+    const detailsModal = document.getElementById('detailsModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalTitleKn = document.getElementById('modalTitleKn');
+    const modalEpithet = document.getElementById('modalEpithet');
+    const modalTimeline = document.getElementById('modalTimeline');
+    const modalDiscipline = document.getElementById('modalDiscipline');
+    const modalHonors = document.getElementById('modalHonors');
+    const modalQuote = document.getElementById('modalQuote');
+    const modalQuoteAuthor = document.getElementById('modalQuoteAuthor');
+    const modalBiography = document.getElementById('modalBiography');
+    const modalWorksList = document.getElementById('modalWorksList');
+    const modalTypeBadge = document.getElementById('modalTypeBadge');
+
+    // Drawer Elements
+    const bookmarksDrawer = document.getElementById('bookmarksDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const openBookmarksBtn = document.getElementById('openBookmarksBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerItemsList = document.getElementById('drawerItemsList');
+
+    // Toast Element
+    const toastNotification = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMsg');
+
+    // -------------------------------------------------------------
+    // Render Cards
+    // -------------------------------------------------------------
+    function renderCards() {
+      // Filter logic
+      const filtered = heritageItems.filter(item => {
+        // Tab Filter
+        const matchesTab = (currentTab === 'all') || (item.type === currentTab);
+        
+        // Category Filter
+        const matchesCategory = (currentCategory === 'all') || (item.category === currentCategory);
+
+        // Search Filter
+        const query = searchQuery.toLowerCase().trim();
+        const matchesSearch = !query || 
+          item.name.toLowerCase().includes(query) ||
+          item.kannadaName.toLowerCase().includes(query) ||
+          item.epithet.toLowerCase().includes(query) ||
+          item.summary.toLowerCase().includes(query) ||
+          item.era.toLowerCase().includes(query) ||
+          (item.works && item.works.some(w => w.toLowerCase().includes(query)));
+
+        return matchesTab && matchesCategory && matchesSearch;
+      });
+
+      visibleCountEl.textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        cardsContainer.innerHTML = `
+          <div class="empty-state">
+            <i class="fa-solid fa-feather-pointed"></i>
+            <h3 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--gold-light); margin-bottom:0.5rem;">No Treasures Found</h3>
+            <p>No matching legendary figure or landmark movie found for "${searchQuery}".</p>
+          </div>
+        `;
+        return;
+      }
+
+      cardsContainer.innerHTML = filtered.map(item => {
+        const isSaved = bookmarks.includes(item.id);
+        const typeLabel = item.type === 'people' ? 'Immortal Icon' : 'Landmark Cinema';
+        const typeIcon = item.type === 'people' ? 'fa-user-crown' : 'fa-film';
+
+        return `
+          <article class="royal-card royal-border" data-id="${item.id}">
+            <div class="card-banner">
+              <span class="card-type-badge">
+                <i class="fa-solid ${typeIcon}"></i> ${typeLabel}
+              </span>
+              <button class="bookmark-card-btn ${isSaved ? 'saved' : ''}" 
+                      onclick="toggleBookmark('${item.id}', event)" 
+                      title="${isSaved ? 'Remove from Treasury' : 'Add to Treasury'}">
+                <i class="fa-${isSaved ? 'solid' : 'regular'} fa-bookmark"></i>
+              </button>
+              <div class="card-avatar-art">
+                <i class="fa-solid ${item.icon}"></i>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="card-header-meta">
+                <span class="card-category">${item.category}</span>
+                <span class="card-era"><i class="fa-regular fa-clock" style="font-size:0.75rem; margin-right:4px;"></i>${item.era}</span>
+              </div>
+
+              <h3 class="card-title">${item.name}</h3>
+              <div class="card-title-kn">${item.kannadaName}</div>
+              
+              <div class="card-epithet">${item.epithet}</div>
+
+              <p class="card-desc">${item.summary}</p>
+
+              <div class="card-highlights">
+                <div class="highlight-item">
+                  <i class="fa-solid fa-award"></i>
+                  <span><strong>Recognition:</strong> ${item.honors.split(',')[0]}</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-compass"></i>
+                  <span><strong>Legacy:</strong> ${item.discipline.split(',')[0]}</span>
+                </div>
+              </div>
+
+              <button class="btn-card-action" onclick="openDetailsModal('${item.id}')">
+                <span>Explore Legacy</span>
+                <i class="fa-solid fa-arrow-right-long"></i>
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // -------------------------------------------------------------
+    // Modal Functions
+    // -------------------------------------------------------------
+    function openDetailsModal(id) {
+      const item = heritageItems.find(it => it.id === id);
+      if (!item) return;
+
+      modalTitle.textContent = item.name;
+      modalTitleKn.textContent = item.kannadaName;
+      modalEpithet.textContent = item.epithet;
+      modalTimeline.textContent = item.era;
+      modalDiscipline.textContent = item.discipline;
+      modalHonors.textContent = item.honors;
+      modalQuote.textContent = `"${item.quote}"`;
+      modalQuoteAuthor.textContent = `— ${item.name.toUpperCase()} ARCHIVE`;
+      modalBiography.textContent = item.details;
+
+      modalTypeBadge.innerHTML = item.type === 'people' 
+        ? `<i class="fa-solid fa-award"></i> <span>IMMORTAL ICON</span>` 
+        : `<i class="fa-solid fa-film"></i> <span>LANDMARK CINEMA</span>`;
+
+      // Render Works
+      modalWorksList.innerHTML = item.works.map(work => `
+        <span class="work-tag"><i class="fa-solid fa-circle-notch" style="font-size:0.65rem; margin-right:5px; color:var(--gold-primary)"></i>${work}</span>
+      `).join('');
+
+      detailsModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDetailsModal() {
+      detailsModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    modalCloseBtn.addEventListener('click', closeDetailsModal);
+    detailsModal.addEventListener('click', (e) => {
+      if (e.target === detailsModal) closeDetailsModal();
+    });
+
+    // -------------------------------------------------------------
+    // Bookmarking & Treasury Drawer
+    // -------------------------------------------------------------
+    function updateBookmarkCount() {
+      bookmarkCountEl.textContent = bookmarks.length;
+      localStorage.setItem('karunada_bookmarks', JSON.stringify(bookmarks));
+    }
+
+    function toggleBookmark(id, event) {
+      if (event) event.stopPropagation();
+      const index = bookmarks.indexOf(id);
+      const item = heritageItems.find(it => it.id === id);
+
+      if (index > -1) {
+        bookmarks.splice(index, 1);
+        showToast(`Removed "${item.name}" from Treasury`);
+      } else {
+        bookmarks.push(id);
+        showToast(`Saved "${item.name}" into Royal Treasury`);
+      }
+
+      updateBookmarkCount();
+      renderCards();
+      renderDrawer();
+    }
+
+    function renderDrawer() {
+      if (bookmarks.length === 0) {
+        drawerItemsList.innerHTML = `
+          <div style="text-align:center; padding:3rem 1rem; color:var(--text-muted);">
+            <i class="fa-regular fa-bookmark" style="font-size:2.5rem; color:var(--gold-dark); margin-bottom:1rem; display:block;"></i>
+            <p>Your treasury is currently empty.<br>Save eternal icons and landmark films to view them anytime.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const savedItems = heritageItems.filter(it => bookmarks.includes(it.id));
+      drawerItemsList.innerHTML = savedItems.map(item => `
+        <div class="drawer-item">
+          <div>
+            <h4>${item.name}</h4>
+            <span>${item.kannadaName}</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <button class="btn-icon" style="padding:0.4rem 0.7rem; font-size:0.75rem;" onclick="openDetailsModal('${item.id}'); closeDrawer();">
+              View
+            </button>
+            <button class="drawer-item-del" onclick="toggleBookmark('${item.id}')" title="Remove">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openDrawer() {
+      renderDrawer();
+      bookmarksDrawer.classList.add('active');
+      drawerOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      bookmarksDrawer.classList.remove('active');
+      drawerOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    openBookmarksBtn.addEventListener('click', openDrawer);
+    closeDrawerBtn.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    // -------------------------------------------------------------
+    // Toast Alert
+    // -------------------------------------------------------------
+    let toastTimeout;
+    function showToast(message) {
+      clearTimeout(toastTimeout);
+      toastMsg.textContent = message;
+      toastNotification.classList.add('show');
+      toastTimeout = setTimeout(() => {
+        toastNotification.classList.remove('show');
+      }, 2600);
+    }
+
+    // -------------------------------------------------------------
+    // Search & Filter Listeners
+    // -------------------------------------------------------------
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderCards();
+    });
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTab = btn.getAttribute('data-tab');
+        renderCards();
+      });
+    });
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.getAttribute('data-cat');
+        renderCards();
+      });
+    });
+
+    // Keyboard support: Escape closes overlays
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDetailsModal();
+        closeDrawer();
+      }
+    });
+
+    // -------------------------------------------------------------
+    // Ambient Golden Shimmer Particles Canvas
+    // -------------------------------------------------------------
+    const canvas = document.getElementById('ambientCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    class GoldParticle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2.2 + 0.5;
+        this.speedY = Math.random() * 0.4 + 0.15;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random() * 0.7 + 0.2;
+        this.color = Math.random() > 0.5 ? '#D4AF37' : '#F5D77F';
+      }
+      update() {
+        this.y -= this.speedY;
+        this.x += this.speedX;
+        if (this.y < 0 || this.x < 0 || this.x > canvas.width) {
+          this.reset();
+          this.y = canvas.height + 5;
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.opacity;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#D4AF37';
+        ctx.fill();
+        ctx.globalAlpha = 1.0;
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    function initParticles() {
+      resizeCanvas();
+      particles = [];
+      const count = Math.floor(window.innerWidth / 28);
+      for (let i = 0; i < count; i++) {
+        particles.push(new GoldParticle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+
+    // -------------------------------------------------------------
+    // Application Initialization
+    // -------------------------------------------------------------
+    window.addEventListener('DOMContentLoaded', () => {
+      updateBookmarkCount();
+      renderCards();
+      initParticles();
+      animateParticles();
+    });
+  </script>
+</body>
+</html>
